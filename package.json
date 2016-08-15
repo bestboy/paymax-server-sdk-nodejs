@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "paymax-server-sdk-nodejs",
   "scripts": {
-    "start": "node lib/paymax.js"
+    "start": "node index.js"
   },
   "keywords": [
     "paymax-nodejs",
