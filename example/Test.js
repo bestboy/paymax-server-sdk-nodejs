@@ -1,6 +1,4 @@
-var httpsHelp = require('../lib/httpsHelper');
-var sign = require('../lib/sign');
-var Paymax = require('../lib/paymax');
+var Paymax=require("Paymax");
 
 getResult = function (e, data) {
     console.log("data===" + data);
