@@ -17,16 +17,13 @@ nodejs 版本 v0.10.0 及以上
 ```
 var Paymax=require('paymax');
 ```
-Paymax提供给商户的SecretKey，登录网站后查看
-```
+//Paymax提供给商户的SecretKey，登录网站后查看
 Paymax.conf.setSecretKey('b3fc21858fa5424cafecd338252b155c');
-```
-Paymax提供给商户的公钥，登录网站后查看（参考样例，严格按照pem格式保存）
-```
+
+//Paymax提供给商户的公钥，登录网站后查看（参考样例，严格按照pem格式保存）
 Paymax.conf.setPaymaxPublicKeyPath('paymax_rsa_public_key.pem');
-```
-商户自己的私钥【公钥通过Paymax网站上传到Paymax，私钥pem文件路径设置到下面的变量中】
-```
+
+//商户自己的私钥【公钥通过Paymax网站上传到Paymax，私钥pem文件路径设置到下面的变量中】
 Paymax.conf.setPrivateKeyPath('rsa_private_key.pem');
 ```
 ## 下单：
