@@ -17,6 +17,7 @@ nodejs 版本 v0.10.0 及以上
 ```
 var Paymax=require('paymax');
 ```
+```
 //Paymax提供给商户的SecretKey，登录网站后查看
 Paymax.conf.setSecretKey('b3fc21858fa5424cafecd338252b155c');
 
