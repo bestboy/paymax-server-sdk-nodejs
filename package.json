@@ -1,10 +1,7 @@
 {
-  "name": "paymax-server-sdk",
-  "version": "1.0.1",
+  "name": "qqq-test",
+  "version": "1.0.0",
   "description": "paymax-server-sdk-nodejs",
-  "scripts": {
-    "start": "node index.js"
-  },
   "keywords": [
     "paymax-nodejs",
     "paymax"
@@ -19,14 +16,17 @@
   "engines": {
     "node": ">= v0.10.0"
   },
-  "dependencies": {},
   "bugs": {
     "url": "https://github.com/bestboy/paymax-server-sdk-nodejs/issues"
   },
   "homepage": "https://github.com/bestboy/paymax-server-sdk-nodejs#readme",
   "main": "./lib/paymax.js",
+  "dependencies": {},
+  "devDependencies": {},
   "directories": {
     "example": "example"
   },
-  "devDependencies": {}
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
