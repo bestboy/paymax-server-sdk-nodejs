@@ -1,5 +1,5 @@
 {
-  "name": "qqq-test",
+  "name": "paymax",
   "version": "1.0.0",
   "description": "paymax-server-sdk-nodejs",
   "keywords": [
@@ -20,7 +20,7 @@
     "url": "https://github.com/bestboy/paymax-server-sdk-nodejs/issues"
   },
   "homepage": "https://github.com/bestboy/paymax-server-sdk-nodejs#readme",
-  "main": "./lib/paymax.js",
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
   "directories": {

@@ -1,5 +1,5 @@
 
-var libpath = './lib';
+var libpath = './paymax';
 
 module.exports = {
     conf:     	    require(libpath + '/conf.js'),

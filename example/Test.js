@@ -1,4 +1,11 @@
-var Paymax=require("Paymax");
+var Paymax=require("paymax");
+
+Paymax.conf.setSecretKey('b3fc21858fa5424cafecd338252b155c');
+Paymax.conf.setPaymaxPublicKeyPath('paymax_rsa_public_key.pem');
+Paymax.conf.setPrivateKeyPath('rsa_private_key');
+/*Paymax.setSecretKey('b3fc21858fa5424cafecd338252b155c');
+Paymax.setPaymaxPublicKey('paymax_rsa_public_key.pem');
+Paymax.setPrivateKey('rsa_private_key.pem');*/
 
 getResult = function (e, data) {
     console.log("data===" + data);
