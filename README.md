@@ -11,7 +11,7 @@ nodejs 版本 v0.10.0 及以上
 
 ## 安装
 ```
-`npm install paymax-server-sdk`
+`npm install paymax`
 ```
 ##初始化配置
 ```
@@ -29,7 +29,7 @@ Paymax.conf.setPrivateKeyPath('rsa_private_key.pem');
 ```
 ## 下单：
 ```
-Paymax.charge.create(
+Paymax.charge.createCharge(
     {
         amount: '0.01',
         subject: 'test_subject',
@@ -46,11 +46,11 @@ Paymax.charge.create(
 ```
 ## 订单查询
 ```
-Paymax.charge.query('ch_fbe2d2675043004b02303b6a',getResult);
+Paymax.charge.queryCharge('ch_fbe2d2675043004b02303b6a',getResult);
 ```
 ## 退款
 ```
-Paymax.refund.create(
+Paymax.refund.createRefund(
         'ch_a59123a1538074f3cfa6568b',
          {
          'amount':'0.01',
@@ -62,7 +62,7 @@ Paymax.refund.create(
 ```
 ## 退款查询
 ```
-Paymax.refund.query(
+Paymax.refund.queryRefund(
          {
          'chargeNo':'ch_a59123a1538074f3cfa6568b',
          'refundNo':'re_d6586ff6e077b95985344538'
