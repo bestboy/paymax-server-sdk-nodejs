@@ -1,4 +1,4 @@
-var https = require('http')
+var https = require('https')
     , url = require('url');
 var Conf=require('./conf');
 var Sign=require('./sign');
@@ -30,17 +30,21 @@ var httpsHelper = {
             })
                 .on('end', function () {
 
+                    var err=null;
                     if(res.statusCode<400){
                         var  isVerify = Sign.responseSignVerify(res.headers,revData);
+
                         if(!isVerify){
-                            throw new Error('Invalid Response.[Response Data And Sign Verify Failure.]');
+                            err= new Error('Invalid Response.[Response Data And Sign Verify Failure.]');
                         }
                         if(VALID_RESPONSE_TTL+res.headers.timestamp<new Date().getTime()){
-                            throw new Error('Invalid Response.[Response Time Is Invalid.]');
+                            err=  new Error('Invalid Response.[Response Time Is Invalid.]');
                         }
-                        onEnd(null, revData);
+                        onEnd(err, revData);
+                    }else{
+                        err = new Error("systemError:responseCode is:"+res.statusCode);
+                        onEnd(err, revData);
                     }
-                    onEnd(null, revData);
 
                 });
         }).on('error', function (e) {
@@ -76,17 +80,21 @@ var httpsHelper = {
             })
                 .on('end', function () {
 
+                    var err=null;
                     if(res.statusCode<400){
                         var  isVerify = Sign.responseSignVerify(res.headers,revData);
+
                         if(!isVerify){
-                            throw new Error('Invalid Response.[Response Data And Sign Verify Failure.]');
+                            err = new Error('Invalid Response.[Response Data And Sign Verify Failure.]');
                         }
                         if(VALID_RESPONSE_TTL+res.headers.timestamp<new Date().getTime()){
-                            throw new Error('Invalid Response.[Response Time Is Invalid.]');
+                            err = new Error('Invalid Response.[Response Time Is Invalid.]');
                         }
-                        onEnd(null, revData);
+                        onEnd(err, revData);
+                    }else{
+                        err = new Error("systemError:responseCode is:"+res.statusCode);
+                        onEnd(err, revData);
                     }
-                    onEnd(null, revData);
                 });
         }).on('error', function (e) {
                 onEnd(e, null);

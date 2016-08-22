@@ -4,13 +4,13 @@ var fs=require('fs');
 var conf={};
 
 //生产环境地址
-conf.API_HOST='172.30.21.20';
-conf.PORT='9001';
+conf.API_HOST='www.paymax.cc';
+conf.PORT='443';
 //开发环境地址
 //conf.API_HOST='172.30.21.20';
 //conf.PORT='9001';
 
-conf.BASE_PATH='/v1/';
+conf.BASE_PATH='/merchant-api/v1/';
 conf.sdkVersion=require('../package.json').version;
 
 //Paymax提供给商户的SecretKey，登录网站后查看，比如：'b3fc21858fa5424cafecd338252b155c'

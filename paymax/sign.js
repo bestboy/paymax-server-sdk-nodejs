@@ -10,7 +10,7 @@ var Conf = require('./conf');
  * @param request_data
  */
 var sign = function (method,header,path,query_string,request_data) {
-	
+	var path=path.replace("/merchant-api","");
     var message = method+"\n" +path+ "\n" + query_string + "\n"+header.nonce+"\n"+header.timestamp+"\n" + header.Authorization+"\n" + request_data;
     var sign = signByRSA(message);
 	
@@ -38,12 +38,13 @@ var signByRSA = function (message) {
 }
 var verify=function(data,sig){
 
+	var data=new Buffer(data);
 	var verifyer = Crypto.createVerify('RSA-SHA1');
 	verifyer.update(data);
 	var result = verifyer.verify(Conf.paymaxPublicKey, sig, 'base64');
 	return result;
 }
-exports.sign=sign;
+module.exports.sign=sign;
 exports.signByRSA=signByRSA;
 exports.verify=verify;
 exports.responseSignVerify=responseSignVerify;
